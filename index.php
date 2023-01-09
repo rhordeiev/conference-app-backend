@@ -7,10 +7,17 @@ require_once 'vendor/autoload.php';
 use Application\Application;
 
 $app = new Application();
-header("Access-Control-Allow-Origin: https://conference-app-frontend.herokuapp.com");
+header(
+    "Access-Control-Allow-Origin: https://conference-app-frontend.herokuapp.com"
+);
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+header(
+    'Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With'
+);
 header('Content-Type:application/json');
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    return 0;
+}
 $clientData = match ($_SERVER['REQUEST_METHOD']) {
     'GET' => $_GET,
     'POST' => $_POST,
