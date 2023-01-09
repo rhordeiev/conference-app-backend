@@ -1,0 +1,17 @@
+{
+    "name": "roshordeiev/conference-app-backend",
+    "description": "Backend part of the conference app",
+    "autoload": {
+        "psr-4": {
+            "Application\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rostyslav Hordeiev"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    }
+}
